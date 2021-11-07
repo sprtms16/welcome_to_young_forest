@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app title="모여봐요, 청년의 숲">
       <v-spacer />
-      <v-app-bar-title class="logo"> test </v-app-bar-title>
+      <v-app-bar-title class="logo"> 모여봐요, 청년의 숲! </v-app-bar-title>
       <v-spacer />
     </v-app-bar>
     <v-main>
