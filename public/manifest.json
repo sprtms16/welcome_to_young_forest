@@ -1,0 +1,23 @@
+{
+    "name" : "welcome to forest of youth",
+    "short_name" : "forest",
+    "description" : "청년의 숲 웹앱",
+    "scope" : ".",
+    "start_url" : "./",
+    "display" : "fullscreen",
+    "orientation" : "portrait",
+    "theme_color" : "#ffffff",
+    "background_color" : "antiquewhite",
+    "icons" : [
+        {
+            "src" : "img/icon-512.png",
+            "size" : "512x512",
+            "type" : "img/png"
+        },
+        {
+            "src" : "img/icon-128.png",
+            "size" : "128x128",
+            "type" : "img/png"
+        }
+    ]
+}

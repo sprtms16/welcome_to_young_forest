@@ -2,10 +2,9 @@
   <section id="Program">
     <article
       class="container program_wrap"
-      v-for="(item, index) in reviewData"
+      v-for="(item, index) in programData"
       :key="index"
       v-bind:style="{ backgroundImage: 'url(' + item.bgImg + ')' }"
-      @click="detail(index)"
     >
       <div class="blur">
         <div class="program_text_box">
@@ -25,23 +24,13 @@
 </template>
 
 <script>
-import reviewData from "@/data/reviewData.js";
+import programData from "@/data/programData.js";
 
 export default {
-  name: "Review",
+  name: "Program",
   data: () => ({
-    reviewData: reviewData,
+    programData: programData,
   }),
-  methods: {
-    detail(index) {
-      this.$router.push({
-        name: "reviewDetail",
-        params: {
-          contentId: index,
-        },
-      });
-    },
-  },
 };
 </script>
 

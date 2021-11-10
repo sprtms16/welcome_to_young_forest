@@ -1,36 +1,46 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router';
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/review',
-    name: 'Review',
-    component: () => import('../views/Review.vue')
+    path: "/program",
+    name: "Program",
+    component: () => import("../views/Program.vue"),
   },
   {
-    path: '/community',
-    name: 'Community',
-    component: () => import('../views/Community.vue')
+    path: "/review",
+    name: "Review",
+    component: () => import("../views/Review.vue"),
   },
   {
-    path: '/mypage',
-    name: 'Mypage',
-    component: () => import('../views/Mypage.vue')
-  }
-]
+    path: "/community",
+    name: "Community",
+    component: () => import("../views/Community.vue"),
+  },
+  {
+    path: "/write",
+    name: "Write",
+    component: () => import("../views/Write.vue"),
+  },
+  {
+    path: "/detail/:contentId",
+    name: "Detail",
+    component: () => import("../components/reviewDetail.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
