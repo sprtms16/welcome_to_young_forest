@@ -35,7 +35,7 @@ export default {
   methods: {
     detail(index) {
       this.$router.push({
-        name: "reviewDetail",
+        name: "Detail",
         params: {
           contentId: index,
         },
