@@ -31,9 +31,9 @@ const routes = [
     component: () => import("../views/Write.vue"),
   },
   {
-    path: "/detail/:contentId",
+    path: "/review/detail/:contentId",
     name: "Detail",
-    component: () => import("../components/reviewDetail.vue"),
+    component: () => import("../components/Detail.vue"),
   },
 ];
 
