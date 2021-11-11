@@ -33,11 +33,7 @@
           </span>
         </li>
         <li>
-          <input
-            v-model="paragraph"
-            type="textarea"
-            placeholder="내용을 입력하세요"
-          />
+          <textarea placeholder="내용을 입력하세요"> </textarea>
         </li>
         <li class="write_btn_wrap">
           <button class="btn write_btn" @click="write">작성</button>
@@ -85,9 +81,10 @@ export default {
 
 <style scoped>
 select {
-  padding: 15px;
+  padding: 10px;
   border: 3px solid #e2e2e2;
   font-family: inherit;
+  font-size: 0.875rem;
   background: url("../assets/img/expand_more_black_24dp.svg") no-repeat 95% 50%;
   border-radius: 0px;
   -webkit-appearance: none;
@@ -96,27 +93,18 @@ select {
 }
 
 .select {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 input[type="text"] {
   width: 100%;
 }
 
-input[type="textarea"] {
+textarea {
   height: 50vh;
 }
 
 .upload_img_btn {
-  padding: 15px;
-}
-
-.write_btn_wrap {
-  margin-top: 15px;
-}
-
-.write_btn {
-  border-radius: 5px;
-  box-shadow: none;
+  padding: 10px;
 }
 </style>

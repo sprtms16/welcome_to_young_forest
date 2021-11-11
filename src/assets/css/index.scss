@@ -237,15 +237,35 @@ section {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/***** form tag *****/
-input[type="text"] {
-  padding: 15px;
-  border-bottom: 3px solid #e2e2e2;
+.write_btn_wrap {
+  margin-top: 15px;
 }
-input[type="textarea"] {
+
+.write_btn {
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 10px 16px;
+  font-family: "NEXON Lv1 Gothic OTF Bold";
+  font-size: 0.875rem;
+}
+
+/***** form tag *****/
+input[type="text"],
+[type="password"] {
+  padding: 10px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 0.875rem;
+}
+
+textarea {
   padding: 15px;
-  border: 3px solid #e2e2e2;
+  border: 1px solid #e2e2e2;
   width: 100%;
+  outline: none;
 }
 
 select::-ms-expand {
