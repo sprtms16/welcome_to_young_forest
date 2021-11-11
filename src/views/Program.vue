@@ -35,23 +35,9 @@ export default {
 </script>
 
 <style scoped>
-.program_wrap {
-  padding: 0;
+.container {
   background-size: cover;
-}
-
-.blur {
-  background-color: rgba(85, 85, 85, 0.2);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  border-radius: 30px;
-}
-
-.program_text_box {
-  padding: 200px 30px 30px 30px;
-}
-
-.program_text_box > p {
-  color: #000;
+  background-position: center;
+  height: 50vh;
 }
 </style>
