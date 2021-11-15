@@ -14,23 +14,27 @@
         </li>
         <li>
           <input
-            v-model="date"
-            type="text"
-            placeholder="작성 날짜를 입력하세요"
+              v-model="date"
+              type="text"
+              placeholder="작성 날짜를 입력하세요"
           />
         </li>
         <li>
-          <input v-model="title" type="text" placeholder="제목을 입력하세요." />
+          <input v-model="title" type="text" placeholder="제목을 입력하세요."/>
         </li>
         <li>
           <!-- 이미지 버튼을 눌렀을 때 이미지를 저장하고 보내는 방법도 모르겠어요...ㅠㅠ -->
-          <span
-            class="material-icons-outlined upload_img_btn"
-            type="button"
-            @click="uploadingImg"
-          >
-            image
-          </span>
+          <input type="file" ref="file" id="bg-file" style="display: none" @change="uploadFile">
+          <label for="bg-file">
+            <span class="material-icons-outlined upload_img_btn" type="button">image</span></label>
+          <img src="">
+          <!--          <span-->
+          <!--            class="material-icons-outlined upload_img_btn"-->
+          <!--            type="button"-->
+          <!--            @click="uploadingImg"-->
+          <!--          >-->
+          <!--            image-->
+          <!--          </span>-->
         </li>
         <li>
           <textarea placeholder="내용을 입력하세요"> </textarea>
@@ -63,6 +67,9 @@ export default {
     };
   },
   methods: {
+    uploadFile: () => {
+
+    },
     goBack() {
       this.$router.go(-1);
     },

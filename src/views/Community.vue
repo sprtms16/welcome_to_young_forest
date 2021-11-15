@@ -3,8 +3,8 @@
     <article class="container">
       <ul class="commnunity_textbox_wrap">
         <li class="textbox_personal">
-          <input type="text" placeholder="이름" />
-          <input type="password" placeholder="비밀번호" />
+          <input type="text" placeholder="이름"/>
+          <input type="password" placeholder="비밀번호"/>
         </li>
         <li class="textbox_write">
           <textarea placeholder="당신의 이야기를 들려주세요"> </textarea>
@@ -16,68 +16,24 @@
     </article>
     <!-- 댓글과 내용의 데이터가 분리 되어야 할 거 같아서 분리 했는데 데이터가 두 개 있는 상황에서는 어떻게 해야할 지 모르겠어요..ㅠ -->
     <!-- 두 개를 끌어와서 동시에 쓰는 방법은 어려워서 communityData 쪽은 데이터만 만들어두고 타이핑 했습니다! -->
-    <article class="container community_container">
-      <h3>홍길동</h3>
-      <span>2021.10.01</span>
-      <p>같이 도서관 가실 분 구해봅니다!</p>
+    <article class="container community_container" v-for="(community, index) in list" :key="index">
+      <h3>{{ community.name }}</h3>
+      <span>{{ community.createdAt }}</span>
+      <p>{{ community.content }}</p>
       <div class="comment_list_wrap">
         <ul
-          class="comment_list"
-          v-for="(comment, index) in commentData"
-          :key="index"
+            class="comment_list"
+            v-for="(replay, index2) in community.replayList"
+            :key="index2"
         >
-          <li class="comment_name">{{ comment.nickName }}</li>
-          <li class="comment_contants">{{ comment.contants }}</li>
+          <li class="comment_name">{{ replay.name }}</li>
+          <li class="comment_contants">{{ replay.content }}</li>
         </ul>
       </div>
       <div class="comment_wrap">
         <div class="comment_input">
-          <input type="text" placeholder="이름" />
-          <input type="text" placeholder="댓글" />
-        </div>
-        <button class="btn write_btn">올리기</button>
-      </div>
-    </article>
-    <article class="container community_container">
-      <h3>홍길동</h3>
-      <span>2021.10.01</span>
-      <p>같이 도서관 가실 분 구해봅니다!</p>
-      <div class="comment_list_wrap">
-        <ul
-          class="comment_list"
-          v-for="(comment, index) in commentData"
-          :key="index"
-        >
-          <li class="comment_name">{{ comment.nickName }}</li>
-          <li class="comment_contants">{{ comment.contants }}</li>
-        </ul>
-      </div>
-      <div class="comment_wrap">
-        <div class="comment_input">
-          <input type="text" placeholder="이름" />
-          <input type="text" placeholder="댓글" />
-        </div>
-        <button class="btn write_btn">올리기</button>
-      </div>
-    </article>
-    <article class="container community_container">
-      <h3>홍길동</h3>
-      <span>2021.10.01</span>
-      <p>같이 도서관 가실 분 구해봅니다!</p>
-      <div class="comment_list_wrap">
-        <ul
-          class="comment_list"
-          v-for="(comment, index) in commentData"
-          :key="index"
-        >
-          <li class="comment_name">{{ comment.nickName }}</li>
-          <li class="comment_contants">{{ comment.contants }}</li>
-        </ul>
-      </div>
-      <div class="comment_wrap">
-        <div class="comment_input">
-          <input type="text" placeholder="이름" />
-          <input type="text" placeholder="댓글" />
+          <input type="text" placeholder="이름"/>
+          <input type="text" placeholder="댓글"/>
         </div>
         <button class="btn write_btn">올리기</button>
       </div>
@@ -86,15 +42,26 @@
 </template>
 
 <script>
-import communitiyData from "@/data/communityData.js";
-import commentData from "@/data/commentData.js";
+
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "Community",
-  data: () => ({
-    communitiyData: communitiyData,
-    commentData: commentData,
-  }),
+  methods: {
+    ...mapActions([
+      'setCommunityList', 'fetchCommunityList'
+    ])
+  },
+  created() {
+    this.setCommunityList()
+  },
+  computed: {
+    ...mapGetters({
+      list: 'getCommunityList',
+      page: 'getCommunityListPage',
+      isLast: 'getCommunityListIsLast'
+    })
+  },
 };
 </script>
 

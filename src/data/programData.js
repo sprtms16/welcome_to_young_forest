@@ -1,7 +1,7 @@
 export default [
   {
     bgImg: require("@/assets/img/cordingClass.png"),
-    date: "2021.11.06 ~ 2021.11.14",
+    date: "2021.10.30 ~ 2021.11.07",
     title: "나만의 웹사이트 만들기",
     paragraph:
       "박영진 강사님의 vue티풀한 코딩클래스가 예정되어 있습니다. 많은 참여 부탁드려요! 신청은 청년회 오픈카톡에서 가능합니다.",
